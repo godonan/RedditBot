@@ -22,7 +22,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 negation_list = ["dont", "do not", "don't","can't","cant","Shouldn't","Shouldnt","almost","nearly","wouldn't","wouldnt"]
 reddit_prefix = "https://www.reddit.com"
 if args.live or args.populate:
-    subreddit = 'chess'
+    subreddit = 'airel_bot'
     from db import *
 
 elif args.test:

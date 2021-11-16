@@ -35,7 +35,7 @@ list_of_candidates = [["Paiev"],
 @backoff.on_exception(backoff.expo,
                       requests.exceptions.RequestException)
 def get_pushshift_data(user):
-    pd_url = f'https://api.pushshift.io/reddit/search/comment/?size=1&before=14d&subreddit=chess&author={user}'
+    pd_url = f'https://api.pushshift.io/reddit/search/comment/?size=1&before=14d&subreddit=airel_bot&author={user}'
     # print(pd_url)
 
     r = requests.get(pd_url)
