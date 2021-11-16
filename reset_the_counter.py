@@ -21,6 +21,9 @@ logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
 negation_list = ["dont", "do not", "don't","can't","cant","Shouldn't","Shouldnt","almost","nearly","wouldn't","wouldnt"]
 reddit_prefix = "https://www.reddit.com"
+if not args.live and not args.populate and not args.test:
+    args.live = True
+
 if args.live or args.populate:
     subreddit = 'airel_bot'
     from db import *
@@ -92,6 +95,7 @@ def respond_to_reset(reset):
     try:
         from secret import secret, password, username, app_id
 
+
         reddit = praw.Reddit(client_id=app_id,
                              client_secret=secret,
                              username=username,
@@ -157,7 +161,11 @@ def find_resets(comments):
 
 def monitor():
     logging.info("Entering monitoring mode.")
+
     from secret import secret, password, username, app_id
+    print(secret, password, username, app_id)
+    import sys
+    sys.stdout.flush()
     reddit = praw.Reddit(client_id=app_id,
                          client_secret=secret,
                          username=username,
