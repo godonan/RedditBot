@@ -21,8 +21,6 @@ logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 
 negation_list = ["dont", "do not", "don't","can't","cant","Shouldn't","Shouldnt","almost","nearly","wouldn't","wouldnt"]
 reddit_prefix = "https://www.reddit.com"
-if not args.live and not args.populate and not args.test:
-    args.live = True
 
 if args.live or args.populate:
     subreddit = 'airel_bot'
